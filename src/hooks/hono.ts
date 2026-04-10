@@ -11,6 +11,7 @@ export function patchHandler(tracer: Tracer, h: Handler | MiddlewareHandler) {
 
 		const spanName = h.name || "anonymous";
 
+		// Don't produce parent traces. The library expects the usage of @hono/otel, so that should be the parent trace
 		if (!trace.getActiveSpan()) {
 			return h(c, next);
 		}
