@@ -11,7 +11,6 @@ const HONO_MODULE = "hono";
 const HONO_SUPPORTED_VERSIONS = ["4.*"];
 
 type HonoApp = typeof import("hono")["Hono"];
-
 type RouteArgs = [path: string, ...handlers: (Handler | MiddlewareHandler)[]];
 type UseArgs = (Handler | MiddlewareHandler)[];
 
