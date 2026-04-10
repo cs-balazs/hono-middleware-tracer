@@ -8,7 +8,7 @@ import pkg from "../package.json" with { type: "json" };
 import { patchHandler } from "./hooks/hono.js";
 
 const HONO_MODULE = "hono";
-const HONO_SUPPORTED_VERSIONS = [">=3.0.0 <5"];
+const HONO_SUPPORTED_VERSIONS = ["4.*"];
 
 type HonoApp = typeof import("hono")["Hono"];
 
