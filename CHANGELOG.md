@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.7](https://github.com/cs-balazs/hono-middleware-tracer/compare/v1.0.6...v1.0.7) (2026-04-10)
+
+
+### Bug Fixes
+
+* add permission to release please action for npm trusted publishing ([0a3dc89](https://github.com/cs-balazs/hono-middleware-tracer/commit/0a3dc89d4267a66a6dfd2dc45325d1f8c1a3eec0))
+
 ## [1.0.6](https://github.com/cs-balazs/hono-middleware-tracer/compare/v1.0.5...v1.0.6) (2026-04-10)
 
 
