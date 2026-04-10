@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/cs-balazs/hono-middleware-tracer/compare/v1.0.7...v1.1.0) (2026-04-10)
+
+
+### Features
+
+* configurable fallbackSpanName ([6dcf5b6](https://github.com/cs-balazs/hono-middleware-tracer/commit/6dcf5b68481eef27e950ec7ec1eec19c05909294))
+
 ## [1.0.7](https://github.com/cs-balazs/hono-middleware-tracer/compare/v1.0.6...v1.0.7) (2026-04-10)
 
 
