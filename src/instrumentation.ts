@@ -3,16 +3,12 @@ import {
 	type InstrumentationConfig,
 	InstrumentationNodeModuleDefinition,
 } from "@opentelemetry/instrumentation";
-import type { Handler, MiddlewareHandler } from "hono";
 import pkg from "../package.json" with { type: "json" };
 import { patchHandler } from "./hooks/hono.js";
+import type { HonoApp, RouteArgs, UseArgs } from "./types.js";
 
 const HONO_MODULE = "hono";
 const HONO_SUPPORTED_VERSIONS = ["4.*"];
-
-type HonoApp = typeof import("hono")["Hono"];
-type RouteArgs = [path: string, ...handlers: (Handler | MiddlewareHandler)[]];
-type UseArgs = (Handler | MiddlewareHandler)[];
 
 export class HonoInstrumentation extends InstrumentationBase {
 	constructor(config: InstrumentationConfig = {}) {
