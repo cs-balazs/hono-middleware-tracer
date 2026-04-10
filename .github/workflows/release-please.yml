@@ -29,7 +29,12 @@ jobs:
           node-version: 24
           registry-url: 'https://registry.npmjs.org'
         if: ${{ steps.release.outputs.release_created }}
-      - run: npm ci
+      - uses: pnpm/action-setup@v5
+        name: Install pnpm
+        with:
+          version: 10
+          cache: true
+      - run: pnpm ci
         if: ${{ steps.release.outputs.release_created }}
       - run: npm publish
         env:
