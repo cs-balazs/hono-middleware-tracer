@@ -1,1 +1,1 @@
-export { HonoInstrumentation } from "./instrumentation.js";
+export { HonoMiddlewareTracer } from "./instrumentation.js";

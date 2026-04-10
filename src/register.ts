@@ -1,8 +1,8 @@
 import { getNodeAutoInstrumentations } from "@opentelemetry/auto-instrumentations-node";
 import { NodeSDK } from "@opentelemetry/sdk-node";
-import { HonoInstrumentation } from "./instrumentation.js";
+import { HonoMiddlewareTracer } from "./instrumentation.js";
 
-const honoInstrumentation = new HonoInstrumentation({});
+const honoInstrumentation = new HonoMiddlewareTracer({});
 
 const sdk = new NodeSDK({
 	instrumentations: [...getNodeAutoInstrumentations(), honoInstrumentation],

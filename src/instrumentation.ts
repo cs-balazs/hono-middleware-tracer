@@ -15,7 +15,7 @@ import type {
 const HONO_MODULE = "hono";
 const HONO_SUPPORTED_VERSIONS = ["4.*"];
 
-export class HonoInstrumentation extends InstrumentationBase {
+export class HonoMiddlewareTracer extends InstrumentationBase {
 	private config: HonoMiddlewareTracerConfig = {
 		fallbackSpanName: "anonymous",
 	};
