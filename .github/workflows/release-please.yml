@@ -33,6 +33,7 @@ jobs:
         name: Install pnpm
         with:
           version: 10
+        if: ${{ steps.release.outputs.release_created }}
       - run: pnpm ci
         if: ${{ steps.release.outputs.release_created }}
       - run: npm publish
