@@ -25,12 +25,14 @@ export function patchHandler(tracer: Tracer, h: Handler | MiddlewareHandler) {
 					nextMwEnd = performance.now();
 					return r;
 				});
+
 				if (c.res && c.res.status >= 400) {
 					span.setStatus({ code: SpanStatusCode.ERROR });
 					span.setAttribute(ATTR_HTTP_RESPONSE_STATUS_CODE, c.res.status);
 				} else {
 					span.setStatus({ code: SpanStatusCode.OK });
 				}
+
 				return result;
 			} catch (error) {
 				span.setStatus({ code: SpanStatusCode.ERROR });
