@@ -11,8 +11,7 @@ export function patchHandler(tracer: Tracer, h: Handler | MiddlewareHandler) {
 
 		const spanName = h.name || "anonymous";
 
-		const s = trace.getActiveSpan();
-		if (!s) {
+		if (!trace.getActiveSpan()) {
 			return h(c, next);
 		}
 
