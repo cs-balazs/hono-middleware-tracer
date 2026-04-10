@@ -5,18 +5,39 @@ import {
 } from "@opentelemetry/instrumentation";
 import pkg from "../package.json" with { type: "json" };
 import { patchHandler } from "./hooks/hono.js";
-import type { HonoApp, RouteArgs, UseArgs } from "./types.js";
+import type {
+	HonoApp,
+	HonoMiddlewareTracerConfig,
+	RouteArgs,
+	UseArgs,
+} from "./types.js";
 
 const HONO_MODULE = "hono";
 const HONO_SUPPORTED_VERSIONS = ["4.*"];
 
 export class HonoInstrumentation extends InstrumentationBase {
-	constructor(config: InstrumentationConfig = {}) {
+	private config: HonoMiddlewareTracerConfig = {
+		fallbackSpanName: "anonymous",
+	};
+
+	constructor({
+		honoMiddlewareTracerConfig,
+		...config
+	}: InstrumentationConfig & {
+		honoMiddlewareTracerConfig?: Partial<HonoMiddlewareTracerConfig>;
+	} = {}) {
 		super("hono-middleware-tracer", pkg.version, config);
+		if (honoMiddlewareTracerConfig) {
+			this.config = {
+				...this.config,
+				...honoMiddlewareTracerConfig,
+			};
+		}
 	}
 
 	protected init() {
 		const tracer = this.tracer;
+		const fallbackSpanName = this.config.fallbackSpanName;
 
 		return [
 			new InstrumentationNodeModuleDefinition(
@@ -43,14 +64,16 @@ export class HonoInstrumentation extends InstrumentationBase {
 										return fn(...(args as any[]));
 									}
 									const newHandlers = handlers.map((h) =>
-										patchHandler(tracer, h),
+										patchHandler(tracer, h, fallbackSpanName),
 									);
 									return fn(path as any, ...newHandlers);
 								}) as Fn;
 							}
 
 							const newUse = (...args: UseArgs) => {
-								const newHandlers = args.map((h) => patchHandler(tracer, h));
+								const newHandlers = args.map((h) =>
+									patchHandler(tracer, h, fallbackSpanName),
+								);
 								return originalUse(...newHandlers);
 							};
 

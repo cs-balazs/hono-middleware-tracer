@@ -2,14 +2,18 @@ import { SpanStatusCode, type Tracer, trace } from "@opentelemetry/api";
 import { ATTR_HTTP_RESPONSE_STATUS_CODE } from "@opentelemetry/semantic-conventions";
 import type { Context, Handler, MiddlewareHandler, Next } from "hono";
 
-export function patchHandler(tracer: Tracer, h: Handler | MiddlewareHandler) {
+export function patchHandler(
+	tracer: Tracer,
+	h: Handler | MiddlewareHandler,
+	fallbackSpanName: string,
+) {
 	return (c: Context, next: Next) => {
 		const start = performance.now();
 		let nextMwStart = start;
 		let nextMwEnd = start;
 		let nextCalled = false;
 
-		const spanName = h.name || "anonymous";
+		const spanName = h.name || fallbackSpanName;
 
 		// Don't produce parent traces. The library expects the usage of @hono/otel, so that should be the parent trace
 		if (!trace.getActiveSpan()) {

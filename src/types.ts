@@ -6,3 +6,7 @@ export type RouteArgs = [
 	...handlers: (Handler | MiddlewareHandler)[],
 ];
 export type UseArgs = (Handler | MiddlewareHandler)[];
+
+export type HonoMiddlewareTracerConfig = {
+	fallbackSpanName: string;
+};
