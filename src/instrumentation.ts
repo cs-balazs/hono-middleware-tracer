@@ -17,6 +17,7 @@ export class HonoInstrumentation extends InstrumentationBase {
 
 	protected init() {
 		const tracer = this.tracer;
+
 		return [
 			new InstrumentationNodeModuleDefinition(
 				HONO_MODULE,
