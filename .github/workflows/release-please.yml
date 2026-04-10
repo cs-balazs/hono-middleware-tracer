@@ -33,7 +33,6 @@ jobs:
         name: Install pnpm
         with:
           version: 10
-          cache: true
       - run: pnpm ci
         if: ${{ steps.release.outputs.release_created }}
       - run: npm publish
