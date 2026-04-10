@@ -33,21 +33,21 @@
   ],
   "author": "baloo",
   "license": "ISC",
-  "packageManager": "pnpm@10.22.0",
+  "packageManager": "pnpm@10.33.0",
   "peerDependencies": {
-    "hono": "^4.12.5"
+    "hono": "^4.12.12"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.4.5",
-    "@hono/zod-openapi": "^1.2.2",
-    "@types/node": "^25.3.3",
-    "hono": "^4.12.4",
+    "@biomejs/biome": "^2.4.11",
+    "@hono/zod-openapi": "^1.2.4",
+    "@types/node": "^25.6.0",
+    "hono": "^4.12.12",
     "tsup": "^8.5.1",
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.2"
   },
   "dependencies": {
-    "@opentelemetry/api": "^1.9.0",
-    "@opentelemetry/auto-instrumentations-node": "^0.70.1",
+    "@opentelemetry/api": "^1.9.1",
+    "@opentelemetry/auto-instrumentations-node": "^0.72.0",
     "@opentelemetry/instrumentation": "^0.214.0",
     "@opentelemetry/sdk-node": "^0.214.0",
     "@opentelemetry/semantic-conventions": "^1.40.0"
@@ -62,7 +62,10 @@
       "entry": [
         "./src/index.ts",
         "./src/register.ts"
-      ]
+      ],
+      "compilerOptions": {
+        "ignoreDeprecations": "6.0"
+      }
     },
     "clean": true,
     "target": "esnext",
