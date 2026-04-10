@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.5](https://github.com/cs-balazs/hono-middleware-tracer/compare/v1.0.4...v1.0.5) (2026-04-10)
+
+
+### Bug Fixes
+
+* small code simplification ([e9ab7dd](https://github.com/cs-balazs/hono-middleware-tracer/commit/e9ab7dd0f251ed7aef97e076ae242600cd83484e))
+
 ## [1.0.4](https://github.com/cs-balazs/hono-middleware-tracer/compare/v1.0.3...v1.0.4) (2026-04-10)
 
 
