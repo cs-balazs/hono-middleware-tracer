@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/cs-balazs/hono-middleware-tracer/compare/v1.0.2...v1.0.3) (2026-04-10)
+
+
+### Bug Fixes
+
+* pnpm install instead of pnpm ci ([8f7055e](https://github.com/cs-balazs/hono-middleware-tracer/commit/8f7055eed3be355ce8a7d2af8b797d592f89c5bd))
+
 ## [1.0.2](https://github.com/cs-balazs/hono-middleware-tracer/compare/v1.0.1...v1.0.2) (2026-04-10)
 
 
