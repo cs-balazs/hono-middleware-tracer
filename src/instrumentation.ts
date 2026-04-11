@@ -21,17 +21,12 @@ export class HonoMiddlewareTracer extends InstrumentationBase {
 	};
 
 	constructor({
-		honoMiddlewareTracerConfig,
+		fallbackSpanName,
 		...config
-	}: InstrumentationConfig & {
-		honoMiddlewareTracerConfig?: Partial<HonoMiddlewareTracerConfig>;
-	} = {}) {
+	}: InstrumentationConfig & Partial<HonoMiddlewareTracerConfig> = {}) {
 		super("hono-middleware-tracer", pkg.version, config);
-		if (honoMiddlewareTracerConfig) {
-			this.config = {
-				...this.config,
-				...honoMiddlewareTracerConfig,
-			};
+		if (fallbackSpanName) {
+			this.config.fallbackSpanName = fallbackSpanName;
 		}
 	}
 
