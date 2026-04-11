@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.2](https://github.com/cs-balazs/hono-middleware-tracer/compare/v1.1.1...v1.1.2) (2026-04-11)
+
+
+### Bug Fixes
+
+* add files field to package.json ([e705ee8](https://github.com/cs-balazs/hono-middleware-tracer/commit/e705ee8126ca3cc89a40467564b914f61f8e2b77))
+
 ## [1.1.1](https://github.com/cs-balazs/hono-middleware-tracer/compare/v1.1.0...v1.1.1) (2026-04-11)
 
 
