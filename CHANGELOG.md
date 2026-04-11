@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.1](https://github.com/cs-balazs/hono-middleware-tracer/compare/v1.1.0...v1.1.1) (2026-04-11)
+
+
+### Bug Fixes
+
+* dont wrap config params in extra object ([9121780](https://github.com/cs-balazs/hono-middleware-tracer/commit/91217800a422718ac04adfffaf14fd90b47271b0))
+* rename class to HonoMiddlewareTracer ([3c5360f](https://github.com/cs-balazs/hono-middleware-tracer/commit/3c5360f0071bc7ba58cd533fa6107c0fc00e05f3))
+
 ## [1.1.0](https://github.com/cs-balazs/hono-middleware-tracer/compare/v1.0.7...v1.1.0) (2026-04-10)
 
 
